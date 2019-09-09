@@ -9,7 +9,7 @@ class UsersController < ApplicationController
         render json: user
     end
     def create
-        byebug
+        # byebug
         user = User.create(user_params)
         render json: user
     end

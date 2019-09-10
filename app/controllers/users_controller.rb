@@ -13,6 +13,11 @@ class UsersController < ApplicationController
         user = User.create(user_params)
         render json: user
     end
+    def destroy
+        user = User.find_by(id: params[:id])
+        byebug
+        user.destroy    
+    end
     def user_params
         params.permit(:name, :age, :weight)        
     end

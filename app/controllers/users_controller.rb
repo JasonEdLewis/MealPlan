@@ -22,7 +22,6 @@ class UsersController < ApplicationController
     end
     def destroy
         user = User.find_by(id: params[:id])
-        byebug
         user.destroy    
     end
     def user_params

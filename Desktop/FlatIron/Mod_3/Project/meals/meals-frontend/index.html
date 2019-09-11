@@ -8,79 +8,36 @@
     <title>Build Your Meal Here</title>
 </head>
 <body>
+    <nav><button>Stay Healthy</button></nav>
     <main id="main">
-            <h1 class="welcome">Welcome</h1>
-        <div id="intake_form_div">
+            <div id="intake_form_div">
+            <h1 class="welcome">Welcome... Plan Your Healthy Meals</h1>
+            <p><strong> Planning your meals can help to change the way you eat and change your food buying habits. If you are concerned about the food you and your family members eat, you should consider meal planning. Meal planning can help to change the way you eat and change your food buying habits. Below are some of the most important reasons why you should plan your meals.</strong></p><br>
+            <p><i><strong>Planing Your Meal Today</strong> </i></p><br>
+        
             <form id="intake_form">
             <h4>Name</h4>
-            <input id="user_name" type="text" name="name">
+            <input id="user_name" type="text" name="name" required>
             <h4>Age</h4>
-            <input id="user_age" type="number" name="age">
+            <input id="user_age" type="number" name="age" min="16" max="100" required>
             <h4>Weight</h4>
-            <input id="user_weight"type="number" name="weight">
+            <input id="user_weight" type="number" name="weight" min="60" max="600"required>
             <br>
             <input id="submit" type="submit" value="Submit">
             </form>
         </div>
-        
-        
+        <div id="main-meal-div">
+            <div id="meal_choice_div">
+                <!-- Add Food Options here -->
+            </div>
+        </div>
 
-    
-
-
-
-for the 3 food choices 
-            PROTEINS
-        <H3>SELECT YOUR PROTEIN</H3> <br>
-<select name="proteins" id="protein_tag">
-    <option value="" disabled selected>Select your protein</option>
-    <option value="chicken">Chicken</option>
-    <option value="beef">Beef</option>
-    <option value="fish">Fish</option>
-    <option value="pork">Pork</option>
-    <option value="Vegetarian">Vegetarian</option>
-</select>
-           
-
-            STARCHES
-        <H3>SELECT A STARCH</H3><br>
-        <p>Carbs blurb</p>
-   
-
-
-  <!--
-       <div>
-        <form action="/meals/">
-            <input list="carbs" name="carbs"> 
-            <datalist id="carbs">
-                <option value="" disabled selected aria-placeholder="select a carb">
-                <option value="potato">
-                <option value="rice">
-                <option value="pasta">
-            </datalist>
-            <input type="submit" name="carbs" id="cabs">
-        </form>
-    </div>
-     <div>
-          VEGETABLES
-        <H3>SELECT YOUR VEGETABLE</H3> <br>
-        <p>veggie blurb</p>
-        <form action="/meals/">
-            <input list="veg" name="veg"> 
-            <datalist id="veg">
-                <option value="" disabled selected>Select your veggies</option>
-                <option value="kale">
-                <option value="broccoli">
-                <option value="green-beans">
-                <option value="asp">
-                <option value="carrots">
-            </datalist>
-            <input type="submit" name="veg" id="veg">
-        </form>
-    </div>
-    -->
 
 </main>
-<script src="index.js"></script>
+<script src="src/DOMShorts.js"></script>
+<script src="src/mealAdapter.js"></script>
+<script src="src/userAdapter.js"></script>
+<script src="src/meal.js"></script>
+<script src="src/index.js"></script>
 </body>
 </html>

@@ -2,5 +2,22 @@
  margin: 0 auto;
  width: 40%;
 
+}
+p {
+    text-align: center;
+}
+form {
+    text-align: center;
 
+}
+h1,h2,h3,h4,h5,h6{
+    text-align: center;
+}
+button nav{
+    position: fixed relative;
+    border-block-end-style: ridge;
+    height: 30px;
+}
+li {
+    list-style-type: none
 }

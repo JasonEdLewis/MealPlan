@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Test</title>
+</head>
+<body>
+    <!-- <h1>Test HTML</h1>
+    <main>
+
+            <form id="protein_form">
+                <input list="protein" name="protein"> 
+                <datalist id="protein">
+                    <option value="chicken">
+                    <option value="beef">
+                    <option value="fish">
+                    <option value="pork">
+                    <option value="Vegetarian">
+                </datalist>
+                <input list="carbs" name="carbs"> 
+                <datalist id="carbs">
+                    <option value="potato">
+                    <option value="rice">
+                    <option value="pasta">
+                </datalist>
+                <input list="veg" name="veg"> 
+                <datalist id="veg">
+                    <option value="kale">
+                    <option value="broccoli">
+                    <option value="green-beans">
+                    <option value="asp">
+                    <option value="carrots">
+                </datalist>
+                <input type="submit">
+            </form>
+    </main>
+    
+</body>
+</html> -->
+
+<!-- 
+
+ <div id="protein">
+        <h1>Choose you Protein, Veggies & Starch ${name}</h1><br>
+        <H3>SELECT YOUR PROTEIN</H3> 
+        <p>
+            It's easy to understand the excitement. Protein is an important component of every cell in the body. Hair and nails are mostly made of protein. Your body uses protein to build and repair tissues. You also use protein to make enzymes, hormones, and other body chemicals. Protein is an important building block of bones, muscles, cartilage, skin, and blood.</p>
+    
+            <form action="http://localhost:3000/meals" method="POST" id="protein_form">
+                <input list="protein" name="protein"> 
+                <datalist id="protein">
+                    <option value="chicken">
+                    <option value="beef">
+                    <option value="fish">
+                    <option value="pork">
+                    <option value="Vegetarian">
+                </datalist>
+
+                
+                <input type="submit">
+            </form>
+        </div>
+                    <br> <br>
+            
+        <div id="carbs">
+        <H3>SELECT A STARCH</H3><br>
+        <p>Carbs blurbCarbohydrates are all about energy and are found in foods like fruits, vegetables, breads, pasta, and dairy products. Your body uses these foods to make glucose, which is your body's main energy source. ... "Carbohydrates provide the body with the energy it needs and are a good source of many vitamins and minerals.</p>
+        
+            <form action="http://localhost:3000/meals" method="POST" id="carbs_form">
+                <input list="carbs" name="carbs"> 
+                <datalist id="carbs">
+                    <option value="potato">
+                    <option value="rice">
+                    <option value="pasta">
+                </datalist>
+                <input type="submit" name="carbs" id="carbs">
+            </form>
+        </div>
+                        <br><br>
+        <div id="veg">
+           
+            <H3>SELECT YOUR VEGETABLE</H3> <br>
+            <p>veggie Eating vegetables provides health benefits – people who eat more vegetables and fruits as part of an overall healthy diet are likely to have a reduced risk of some chronic diseases. Vegetables provide nutrients vital for health and maintenance of your body.</p>
+
+            <form action="http://localhost:3000/meals" method="post" id="veg_form">
+                <input list="veg" name="veg"> 
+                <datalist id="veg">
+                    <option value="kale">
+                    <option value="broccoli">
+                    <option value="green-beans">
+                    <option value="asp">
+                    <option value="carrots">
+                </datalist>
+                <input type="submit" name="veg" id="veg">
+            </form>
+        </div>`
+
+        -->
+        
+        <form autocomplete="on">
+                *First Name: <input placeholder="First name" name="fname" type="text" required /> <br />
+                *Last name: <input type="text" name="lname" placeholder="Last name" /><br />
+                Telephone: <input type="tel" name="phone" /> <br/>
+                *Email: <input type="email" name="email" required /><br />
+                Favorite Animal: <input type="text" name="animal" list="animals" /> (Using datalist. Try typing "D" or "B" or doubleclick)<br />
+                ID Number:
+                <input type="text" placeholder="enter your 5 digit id number" name="idNumber" pattern="[0-9]{5}" /> (Try typing "123" or "123456" or "abcde") <br />
+                <datalist id="animals">
+                    <option value="Dog">
+                    <option value="Dolphin">
+                    <option value="Duck">
+                    <option value="Cat">
+                    <option value="Bird">
+                    <option value="Mouse">
+                </datalist>
+            
+                <input type="submit" />
+                </form>
+
+</head>
+    
+</body>

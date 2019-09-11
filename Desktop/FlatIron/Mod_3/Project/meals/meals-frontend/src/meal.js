@@ -7,7 +7,7 @@ class Meal{
     static mealChoiceMenu =(name,id)=>{
         return  mainMealDiv.innerHTML += `
         <div id="chosenMealItems">
-        <nav><button>Stay Healthy ${name}</button></nav>
+        <nav><button data-user-id="${id}">Stay Healthy ${name}</button></nav>
         <h1>Choose you Protein, Veggies & Starch</h1><br>
         <H3>SELECT YOUR PROTEIN</H3> 
         <p>
@@ -30,9 +30,9 @@ class Meal{
         <p>Carbs blurbCarbohydrates are all about energy and are found in foods like fruits, vegetables, breads, pasta, and dairy products. Your body uses these foods to make glucose, which is your body's main energy source. ... "Carbohydrates provide the body with the energy it needs and are a good source of many vitamins and minerals.</p><br>
          <input list="carb" name="carb"> 
                 <datalist id="carb">
-                    <option value="potato">
-                    <option value="rice">
-                    <option value="pasta">
+                    <option value="Potato">
+                    <option value="Rice">
+                    <option value="Pasta">
                     <option value="Quinoa">
                     <option value="Sweet potato">
                 </datalist>
@@ -41,11 +41,11 @@ class Meal{
             <p>veggie Eating vegetables provides health benefits – people who eat more vegetables and fruits as part of an overall healthy diet are likely to have a reduced risk of some chronic diseases. Vegetables provide nutrients vital for health and maintenance of your body.</p>
                 <input list="veg" name="veg"> 
                 <datalist id="veg">
-                    <option value="kale">
-                    <option value="broccoli">
-                    <option value="green-beans">
-                    <option value="asparagus">
-                    <option value="carrots">
+                    <option value="Kale">
+                    <option value="Broccoli">
+                    <option value="Green-beans">
+                    <option value="Asparagus">
+                    <option value="Carrots">
                     <option value="Microgreens">
                     <option value="Swiss Chard">
                     <option value="Collard Greens">
@@ -76,7 +76,7 @@ class Meal{
         
         return  mainMealDiv.innerHTML += `
         <div id='choosenMeal' data-meal-id="${id}" data-user-id="${user_id}">
-        <nav><button>Stay Healthy ${username}</button></nav>
+        <nav><button${user_id}>Stay Healthy ${username}</button></nav>
         <p>Here are the meal options you have chosen</p>
         <ul>
         <li protein-id="${id}">${protein}</li>
@@ -86,6 +86,8 @@ class Meal{
         </ul>
         <button id="editMeal" data-id="${id}">Edit Your meal</button>
         <button id="deleteMeal" data-id="${id}">Delete meal</button>
+        <button id="add-meal" data-id="${id}">Add meal</button>
+        <button id="home-page" data-id="${id}" href="/index.html">Home</button>
         </div>`
 
     }
@@ -94,7 +96,7 @@ class Meal{
         debugger
         return mainMealDiv.innerHTML += 
         ` <div id="edited-meal-form">
-        <nav><button>Stay Healthy ${username}</button></nav>
+        <nav><button data-user-id="${user_id}">Stay Healthy ${username}</button></nav>
             <p>
             <h3>Edit your Meal here...</h3>
             </p>
@@ -158,7 +160,76 @@ class Meal{
                     <br><br>
             <input type="submit" text="update">
         </form>
-    </div>
-        `
+    </div>`
     }
 }
+
+
+
+
+// ` <div id="edited-meal-form">
+//         <nav><button data-user-id="${user_id}>Stay Healthy ${username}</button></nav>
+//             <p>
+//             <h3>Edit your Meal here...</h3>
+//             </p>
+//             <br>
+//     <form id="edit-meal-form" data-user-id="${user_id}" data-meal-id="${id}">
+
+//         <p>Your current Protein is ${protein}</p>
+
+//         <input list="protein" name="protein"> 
+//         <datalist id="protein">
+//                 <option value="Chicken Breast"> 
+//                 <option value="Lean Beef">
+//                 <option value="Salmon">
+//                 <option value="Tuna">
+//                 <option value="pork">
+//                 <option value="eggs">
+//                 <option value="Baked Chicken"> 
+//                 <option value="Tofu">
+//                 <option value="Turkey Breast">
+//         </datalist>
+
+//         <p>Your current starch is ${carb}</p>
+//         <input list="carb" name="carb"> 
+//             <datalist id="carb">
+//                 <option value="potato">
+//                 <option value="rice">
+//                 <option value="pasta">
+//                 <option value="Quinoa">
+//                 <option value="Sweet potato">
+//             </datalist>
+
+//             <p>Your current vegetable is ${veg}</p>
+//             <input list="veg" name="veg"> 
+
+//             <datalist id="veg">
+//                 <option value="kale">
+//                 <option value="broccoli">
+//                 <option value="green-beans">
+//                 <option value="asparagus">
+//                 <option value="carrots">
+//                 <option value="Microgreens">
+//                 <option value="Swiss Chard">
+//                 <option value="Collard Greens">
+//                 <option value="Spinach">
+//             </datalist>
+
+//             <p>Your current beverage is ${drink}</p>
+//             <input list="drink" name="drink"> 
+
+//             <datalist id="drink">
+//                 <option value="Water">
+//                 <option value="Fruit Juice">
+//                 <option value="Soda">
+//                 <option value="Seltzer">
+//                 <option value="Red wine">
+//                 <option value="White wine">
+//                 <option value="kombucha">
+//                 <option value="Lite beer">
+//                 <option value="Beer">
+//             </datalist>
+//                     <br><br>
+//             <input type="submit" text="update">
+//         </form>
+//     </div>`

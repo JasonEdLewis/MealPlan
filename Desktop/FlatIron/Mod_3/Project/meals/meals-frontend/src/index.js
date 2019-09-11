@@ -11,6 +11,8 @@ const userWeight = _query('#user_weight')
 const submitBtn = _query('#submit')
 const mainMealDiv = _query('#main-meal-div')
 const mealsDiv = _query('#meal_choice_div')
+const navBtn = _query('nav','button')
+
 
 
 intakeForm.addEventListener('submit',(event)=>{
@@ -26,16 +28,26 @@ intakeForm.addEventListener('submit',(event)=>{
         }) })
                 // 2ND 'PAGE' MEAL OPTIONS
         const setUpMealOptions=()=>{
+            const navBtn = _query('nav','button')
+            navBtn.addEventListener('click', (e)=>{
+                if(e.target.dataset.userId){
+                    console.log("Hello User")
+                }
+                else{
+                    console.log("There is no user yet")
+                }
+            })
+
             mealItemsForm = _query('#meal-items-form')
             mealItemsForm.addEventListener('submit', (e) =>{
                 // debugger
                 e.preventDefault();
                 item = e.target
-                MealAdapter.makeMeal(e.path[0].dataset.userId,item.protein.value,item.carb.value,item.veg.value,item.drink.value).then(res => res.json()).then(data =>{
+                MealAdapter.makeMeal(item.dataset.userId,item.protein.value,item.carb.value,item.veg.value,item.drink.value).then(res => res.json()).then(data =>{
                     debugger
                     // REFACTOR
                     Meal.addChosenItems(data.id,data.protein,data.carb,data.veg,data.drink, data.user.name, data.user.id)
-                    debugger
+                    // debugger
 
                     findById("chosenMealItems").remove()
                     activateEditFormAndDeleteBtn()
@@ -45,21 +57,24 @@ intakeForm.addEventListener('submit',(event)=>{
                 const activateEditFormAndDeleteBtn =()=> {
                         const form = findById('editMeal')
                         const deleteBtn = findById('deleteMeal')
+                        const addMealBtn = findById('add-meal')
                         //edit event
                     form.addEventListener('click', (event)=> {
+                        console.log(event.target)
                         // debugger
                         event.preventDefault()
                         MealAdapter.grabOneMeal(event.target.dataset.id).then(res =>  res.json()).then(data =>{
+                            debugger
                                 console.log(data)
                             Meal.editMealMenu(data.user.name, data.user.id,data.id,data.protein,data.carb, data.veg,data.drink)
                             _query('#choosenMeal').remove()
                             UpdateMeal()
                         })
-                      
+                
                     })
                     deleteBtn.addEventListener('click',(e)=>{
                         const id = e.target.dataset.id 
-                           
+                    
                         MealAdapter.deleteMeal(e.target.dataset.id)
                         _query('#choosenMeal').remove()
         nameArr = event.path[1].children[0].firstChild.innerText.split(" ");
@@ -70,10 +85,22 @@ intakeForm.addEventListener('submit',(event)=>{
                         Meal.mealChoiceMenu(username, event.path[1].dataset.userId)
                             setUpMealOptions()
                         } )
-
+                        addMealBtn.addEventListener('click', (e)=>{
+                            const userId = e.path[1].dataset.userId
+                            nameArr = e.path[1].children[0].firstChild.innerText.split(" ");
+        index = nameArr.length;
+        username = nameArr[index - 1].toString();
+                            Meal.mealChoiceMenu(username, userId);
+                            _query('#choosenMeal').remove()
+                            console.log("add a meal")
+                        })
+                        navBtn.addEventListener('click', (e)=>{
+                           console.log( e.target.dataset.userId)
+                        })
 
                 }
                 const UpdateMeal=()=>{
+                    debugger
                     findById('edit-meal-form').addEventListener('submit', (e)=>{
                             e.preventDefault()
                             const mealId = e.target.dataset.mealId;

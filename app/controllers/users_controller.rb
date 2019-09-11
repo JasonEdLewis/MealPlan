@@ -6,6 +6,7 @@ class UsersController < ApplicationController
 
     def show
         user = User.find_by(id: params[:id])
+        meals = user.meals
         render json: user, only:[:id,:name,:weight]
     end
     def create

@@ -9,20 +9,25 @@ class MealsController < ApplicationController
     end
     def create
         # byebug
-        meal = Meal.create(meal_params)
+        meal = Meal.create(create_meal_params)
         render json: meal
     end
     
     def update
-        meal.update(meal_params)
+        meal = Meal.find_by(id: params[:id])
+        meal.update(update_meal_params)
         render json: meal
     end
 
     def destroy
+        meal = Meal.find_by(id: params[:id])
         meal.destroy
     end
-    def meal_params
+    def create_meal_params
         params.permit(:user_id,:protein,:veg,:carb,:drink)
+    end
+    def update_meal_params
+        params.permit(:id,:protein,:veg,:carb,:drink )
     end
 
 end
